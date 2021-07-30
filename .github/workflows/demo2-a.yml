@@ -1,0 +1,22 @@
+name: workflow a in demo2 repo
+
+on: [workflow_dispatch, push]
+    
+jobs:
+  my_first_job:
+    name: Demo First job
+    runs-on: ubuntu-latest
+    steps:
+    - name: My step one
+      run: echo "Hello ,Github actions, I'm >>My step one<<"
+    - name: My step two
+      run: |
+        echo "My step one begin..."
+        echo "doing..."
+        echo "Finished!!!"
+  my_second_job:
+    name: Demo Second job
+    runs-on: macos-latest
+    steps:
+      - name: check OS info
+        run : system_profiler SPSoftwareDataType
